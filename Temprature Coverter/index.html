@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            background-color: antiquewhite;
+            height: 100vh;
+            width: 100vw;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .converter{
+            
+            height: 60%;
+            width: 60%;
+            background: hsl(34, 70%, 82%);
+            
+        }
+
+        label,input{
+            font-size: 2.5vw;
+            margin: 1.5vw;
+        }
+        h1{
+            margin-bottom: 4.5vw;
+        }
+
+        @media (max-width:800px){
+            label,input{
+            font-size: 4vw;
+            margin: 3vw;
+        }
+        h1{
+            margin-bottom: 7vw;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+<div class="converter">
+<center><h1>Temperature Converter</h1>
+
+<label for="">Celsius</label>
+<br>
+<input type="number" value="0" id="cel" >
+<br>
+<label for="">Fahrenheit</label>
+<br>
+<input type="number" value="32" id="far" >
+</center>
+</div>
+    </div>
+</body>
+<script>
+    var cel=document.getElementById('cel');
+    var far=document.getElementById('far');
+
+    cel.addEventListener('input',function(){
+let c=this.value;
+let f=(c*9/5)+32;
+far.value=f;
+    });
+
+    far.addEventListener('input', function(){
+let f=this.value;
+let c=(f-32)*5/9;
+cel.value=c;
+    });
+</script>
+</html>
